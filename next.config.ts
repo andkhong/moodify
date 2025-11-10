@@ -1,11 +1,13 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: 'export', // <=== enables static exports
-  basePath: 'https://github.com/andkhong/moodify', 
+  output: 'export', // ✓ Correct for static exports
+  basePath: '/moodify', // Your repository name
+  assetPrefix: '/moodify/', // Required for proper asset loading
   images: {
-    unoptimized: true, // Disable image optimization for static export
+    unoptimized: true, // ✓ Correct - disables image optimization
   },
+  trailingSlash: true, // Recommended for GitHub Pages
 };
 
 export default nextConfig;
